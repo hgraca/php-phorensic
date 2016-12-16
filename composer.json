@@ -1,8 +1,8 @@
 {
-    "name": "hgraca/lib-name",
+    "name": "hgraca/forensic",
     "license": "MIT",
     "type": "library",
-    "description": "<lib-name-description>",
+    "description": "A static analysis tool to gather a few metrics, like what code should have priority in refactoring.",
     "authors": [
         {
             "name": "Herberto Graça",
@@ -11,12 +11,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Hgraca\\LibName\\": "src/"
+            "Hgraca\\Forensic\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Hgraca\\LibName\\Test\\": "tests/"
+            "Hgraca\\Forensic\\Test\\": "tests/"
         }
     },
     "require": {

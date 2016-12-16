@@ -1,0 +1,29 @@
+# Project #
+############
+bin
+/.php_cs.cache
+
+# Tests #
+############
+/coverage.clover.xml
+/.humbug.log
+
+# Composer #
+############
+composer.phar
+vendor
+
+# PHPStorm #
+############
+.idea
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db

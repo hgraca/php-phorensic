@@ -60,3 +60,7 @@ make cs-fix
 ```
 
 ## Todo
+
+- Create adapter for git
+- Create command to analyze and create the DB file
+- Create adapter for phpmd

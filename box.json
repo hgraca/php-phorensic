@@ -1,0 +1,23 @@
+{
+  "alias": "forensic.phar",
+  "chmod": "0755",
+  "directories": [
+    "src"
+  ],
+  "files": [
+    "LICENSE"
+  ],
+  "finder": [
+    {
+      "name": "*.php",
+      "exclude": [
+        "Tests"
+      ],
+      "in": "vendor"
+    }
+  ],
+  "git-version": "2.0.0",
+  "main": "bin/run.php",
+  "output": "forensic.phar",
+  "stub": true
+}

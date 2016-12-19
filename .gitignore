@@ -1,6 +1,6 @@
 # Project #
 ############
-bin
+/bin/box
 /.php_cs.cache
 
 # Tests #

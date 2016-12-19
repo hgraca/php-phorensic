@@ -8,36 +8,44 @@ help:
 	@echo "Available commands:"
 	@grep '^[^#[:space:]].*:' Makefile | grep -v '^default' | grep -v '^_' | sed 's/://' | xargs -n 1 echo ' -'
 
+box:
+	bin/box
+
+box-update:
+	curl -LSs https://box-project.github.io/box2/installer.php | php
+	chmod +x box.phar
+	mv box.phar bin/box
+
 composer-install:
-	composer install
+	php -n -d extension=json.so -d extension=tokenizer.so -d extension=dom.so /usr/bin/composer install
 
 composer-update:
-	composer update
+	php -n -d extension=json.so -d extension=tokenizer.so -d extension=dom.so /usr/bin/composer update
 
 coverage:
-	php -dzend_extension=xdebug.so bin/phpunit --coverage-text --coverage-clover=coverage.clover.xml
+	php -dzend_extension=xdebug.so vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover.xml
 
 cs-fix:
-	bin/php-cs-fixer fix --verbose
+	vendor/bin/php-cs-fixer fix --verbose
 
 test:
-	bin/phpunit
-	bin/humbug
+	vendor/bin/phpunit
+	vendor/bin/humbug
 
 test-debug:
-	php -dzend_extension=xdebug.so bin/phpunit
+	php -dzend_extension=xdebug.so vendor/bin/phpunit
 
 test-acceptance:
-	bin/phpunit --testsuite acceptance
+	vendor/bin/phpunit --testsuite acceptance
 
 test-functional:
-	bin/phpunit --testsuite functional
+	vendor/bin/phpunit --testsuite functional
 
 test-humbug:
-	bin/humbug
+	vendor/bin/humbug
 
 test-integration:
-	bin/phpunit --testsuite integration
+	vendor/bin/phpunit --testsuite integration
 
 test-unit:
-	bin/phpunit --testsuite unit
+	vendor/bin/phpunit --testsuite unit

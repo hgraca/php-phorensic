@@ -1,5 +1,5 @@
 {
-    "name": "hgraca/forensic",
+    "name": "hgraca/phorensic",
     "license": "MIT",
     "type": "library",
     "description": "A static analysis tool to gather a few metrics, like what code should have priority in refactoring.",
@@ -11,12 +11,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Hgraca\\Forensic\\": "src/"
+            "Hgraca\\Phorensic\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Hgraca\\Forensic\\Test\\": "tests/"
+            "Hgraca\\Phorensic\\Test\\": "tests/"
         }
     },
     "require": {

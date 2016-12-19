@@ -1,5 +1,5 @@
 {
-  "alias": "forensic.phar",
+  "alias": "phorensic.phar",
   "chmod": "0755",
   "directories": [
     "src"
@@ -18,6 +18,6 @@
   ],
   "git-version": "2.0.0",
   "main": "bin/run.php",
-  "output": "forensic.phar",
+  "output": "phorensic.phar",
   "stub": true
 }

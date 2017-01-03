@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+use Hgraca\Phorensic\Analyser\AnalyseCommand;
+use Hgraca\Phorensic\Miner\ExtractCommand;
+
+define('ROOT_DIR', __DIR__ . '/..');
+
+if (!$loader = include __DIR__ . '/../vendor/autoload.php') {
+    die('You must set up the project dependencies.');
+}
+
+$app = new \Cilex\Application('Phorensic');
+
+$app->command(new ExtractCommand());
+$app->command(new AnalyseCommand());
+
+$app->run();

@@ -19,6 +19,7 @@
 *.woff binary
 *.woff2 binary
 *.zip binary
+*.sqlite binary
 
 # do not transfer these files when doing a composer install (the dist version of this package)
 /docs                export-ignore

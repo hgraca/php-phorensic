@@ -1,6 +1,7 @@
 # Project #
 ############
 /bin/box
+/var
 /.php_cs.cache
 
 # Tests #
@@ -27,3 +28,5 @@ vendor
 Icon?
 ehthumbs.db
 Thumbs.db
+
+!**/.gitkeep

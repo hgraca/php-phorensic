@@ -10,13 +10,29 @@
 
 A static analysis tool to gather a few metrics, like what code should have priority in refactoring.
 
-**TODO**: A short description of what is the project. This should explain **what** the project is.
-
-**TODO**: A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+The metrics aimed for are:
+- Hotspots detection (complexity * change_rate)
+    - Prioritize code for refactoring 
+- Code units temporal coupling
+    - If there is no reason for them to change together (unlike tests and the code they test), they should probably be refactored
+- Code units ownership analysis
+    - To detect team knowledge deficiencies
 
 ## Usage
 
-**TODO**: A short explanation of how to use the project. This should explain **how** the project is usable.
+This tool works in 2 steps:
+
+1. Mine the project for data, which is put in a sqlite DB
+    - `phorensic:extract [<repositoryPath>] [<since>] [<dbPath>]`
+2. Query a sqlite DB for information 
+    - `phorensic:analyse <dbPath> [<limit>]`
+
+So, for example:
+
+```bash
+bin/run phorensic:extract /opt/my_project "last month" "./analyse_2016-12-20_23:51:36.sqlite"
+bin/run phorensic:analyse "./analyse_2016-12-20_23:51:36.sqlite" 20
+```
 
 ## Installation
 
@@ -61,6 +77,9 @@ make cs-fix
 
 ## Todo
 
-- Create adapter for git
-- Create command to analyze and create the DB file
-- Create adapter for phpmd
+- Create Builder class so that we can do dep inj with the commands and make them testable
+- Test the commands
++ Create command to find classes with temporal-coupling
++ Create command to find specific class ownership
++ Create command to find specific package ownership
++ Create command to find ownership analysis (ownership fractals)
